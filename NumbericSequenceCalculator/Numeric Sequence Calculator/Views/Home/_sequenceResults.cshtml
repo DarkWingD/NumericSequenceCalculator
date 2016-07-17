@@ -3,23 +3,23 @@
 <div class="results">
     <div class="results-span">
         <h3>All Numbers up to and including: @Model.MagicNumber</h3>
-        @string.Join(",", Model.AllNumbersUpTo)
+        <div id="allNumbersDiv">@string.Join(",", Model.AllNumbersUpTo)</div>
     </div>
     <div class="results-span">
         <h3>All Numbers that are Even up to and including: @Model.MagicNumber</h3>
-        @string.Join(",", Model.EvenNumbersUpTo)
+        <div id="allNumbersEvenDiv">@string.Join(",", Model.EvenNumbersUpTo)</div>
     </div>
     <div class="results-span">
         <h3>All Numbers that are Odd up to and including: @Model.MagicNumber</h3>
-        @string.Join(",", Model.OddNumbersUpTo)
+        <div id="allNumbersOddDiv">@string.Join(",", Model.OddNumbersUpTo)</div>
     </div>
     <div class="results-span">
         <h3>All Numbers up to and including: @Model.MagicNumber, except when divisible by 3 or 5 or 3 and 5, replace with letters 'c','e','z'</h3>
-        @string.Join(",", Model.AllNumbersConditional)
+        <div id="allNumbersConditionalDiv">@string.Join(",", Model.AllNumbersConditional)</div>
     </div>
     <div class="results-span">
         <h3>All Fibonnaci numbers up to and including: @Model.MagicNumber</h3>
-        @string.Join(",", Model.FibonacciNumbersUpTo)
+        <div id="fibonnaciDiv">@string.Join(",", Model.FibonacciNumbersUpTo)</div>
     </div>
 
 </div>

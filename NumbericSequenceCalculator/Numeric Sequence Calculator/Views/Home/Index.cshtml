@@ -39,24 +39,24 @@
             $(this).validate();
             $('#mainform').submit(function (event) {
                 if ($("form").valid()) {
-                    if ($(txtMagicNumber).val() > maxNumber) {
+                    if ($('#txtMagicNumber').val() > maxNumber) {
                         if (!confirm('Your number is larger than ' + maxNumber + ', this may take a little while to calculate, and may cause an error, click Yes to try anyway or No to enter a different number')) {
                             return;
                         }
                     }
-                    $('#results').html('');
-                    //$('#results').fadeOut('slow');
-                    var json = JSON.stringify({ MagicNumber: $(txtMagicNumber).val() });
-                    var url = '@Url.Action("CalculateSequence")';
-                    $.ajax({
-                        type: "POST",
-                        url: url,
-                        data: json,
-                        contentType: "application/json"
-                    }).success(function (data) {
-                        $('#results').html(data);
-                        //$('#results').fadeIn('slow');
-                    });
+                    else {
+                        $('#results').html('');
+                        var json = JSON.stringify({ MagicNumber: $('#txtMagicNumber').val() });
+                        var url = '@Url.Action("CalculateSequence")';
+                        $.ajax({
+                            type: "POST",
+                            url: url,
+                            data: json,
+                            contentType: "application/json"
+                        }).success(function (data) {
+                            $('#results').html(data);
+                        });
+                    }
                 }
                 $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
                 event.preventDefault();
