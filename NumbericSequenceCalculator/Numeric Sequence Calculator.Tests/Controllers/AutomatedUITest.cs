@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WatiN.Core;
 
 namespace Numeric_Sequence_Calculator.Tests.Controllers
@@ -7,6 +6,13 @@ namespace Numeric_Sequence_Calculator.Tests.Controllers
     [TestClass]
     public class AutomatedUITest
     {
+        private const string GoBtn = "calculateSequenceBtn";
+        private const string TxtBox = "txtChosenNumber";
+        private const string FibonnaciDiv = "fibonnaciDiv";
+        private const string AllNumberDiv = "allNumbersDiv";
+        private const string AllNumbersEvenDiv = "allNumbersEvenDiv";
+        private const string AllNumbersOddDiv = "allNumbersOddDiv";
+        private const string AllNumbersConditionalDiv = "allNumbersConditionalDiv";
         private string WebsiteURL = "http://localhost/NumericSequenceCalculator";
 
         [TestMethod]
@@ -14,8 +20,8 @@ namespace Numeric_Sequence_Calculator.Tests.Controllers
         {
             using (var browser = new IE(WebsiteURL))
             {
-                browser.TextField(Find.ById("txtMagicNumber")).TypeText("123");
-                browser.Button(Find.ById("calculateSequenceBtn")).Click();
+                browser.TextField(Find.ById(TxtBox)).TypeText("123");
+                browser.Button(Find.ById(GoBtn)).Click();
                 Assert.IsTrue(browser.ContainsText("All Numbers up to and including: 123"));
             }
         }
@@ -25,8 +31,8 @@ namespace Numeric_Sequence_Calculator.Tests.Controllers
         {
             using (var browser = new IE(WebsiteURL))
             {
-                browser.TextField(Find.ById("txtMagicNumber")).TypeText("GGG");
-                browser.Button(Find.ById("calculateSequenceBtn")).Click();
+                browser.TextField(Find.ById(TxtBox)).TypeText("GGG");
+                browser.Button(Find.ById(GoBtn)).Click();
                 Assert.IsTrue(browser.ContainsText("The field Number must be a number"));
             }
         }
@@ -36,9 +42,9 @@ namespace Numeric_Sequence_Calculator.Tests.Controllers
         {
             using (var browser = new IE(WebsiteURL))
             {
-                browser.TextField(Find.ById("txtMagicNumber")).TypeText("12");
-                browser.Button(Find.ById("calculateSequenceBtn")).Click();
-                var item = browser.Div(Find.ById("allNumbersDiv")).Text;
+                browser.TextField(Find.ById(TxtBox)).TypeText("12");
+                browser.Button(Find.ById(GoBtn)).Click();
+                var item = browser.Div(Find.ById(AllNumberDiv)).Text;
                 var expectedAllNumbersValue = "1,2,3,4,5,6,7,8,9,10,11,12";
                 Assert.AreEqual(item,expectedAllNumbersValue);
             }
@@ -48,9 +54,9 @@ namespace Numeric_Sequence_Calculator.Tests.Controllers
         {
             using (var browser = new IE(WebsiteURL))
             {
-                browser.TextField(Find.ById("txtMagicNumber")).TypeText("12");
-                browser.Button(Find.ById("calculateSequenceBtn")).Click();
-                var item = browser.Div(Find.ById("allNumbersEvenDiv")).Text;
+                browser.TextField(Find.ById(TxtBox)).TypeText("12");
+                browser.Button(Find.ById(GoBtn)).Click();
+                var item = browser.Div(Find.ById(AllNumbersEvenDiv)).Text;
                 var expectedAllNumbersValue = "2,4,6,8,10,12";
                 Assert.AreEqual(item, expectedAllNumbersValue);
             }
@@ -60,9 +66,9 @@ namespace Numeric_Sequence_Calculator.Tests.Controllers
         {
             using (var browser = new IE(WebsiteURL))
             {
-                browser.TextField(Find.ById("txtMagicNumber")).TypeText("12");
-                browser.Button(Find.ById("calculateSequenceBtn")).Click();
-                var item = browser.Div(Find.ById("allNumbersOddDiv")).Text;
+                browser.TextField(Find.ById(TxtBox)).TypeText("12");
+                browser.Button(Find.ById(GoBtn)).Click();
+                var item = browser.Div(Find.ById(AllNumbersOddDiv)).Text;
                 var expectedAllNumbersValue = "1,3,5,7,9,11";
                 Assert.AreEqual(item, expectedAllNumbersValue);
             }
@@ -72,9 +78,9 @@ namespace Numeric_Sequence_Calculator.Tests.Controllers
         {
             using (var browser = new IE(WebsiteURL))
             {
-                browser.TextField(Find.ById("txtMagicNumber")).TypeText("12");
-                browser.Button(Find.ById("calculateSequenceBtn")).Click();
-                var item = browser.Div(Find.ById("allNumbersConditionalDiv")).Text;
+                browser.TextField(Find.ById(TxtBox)).TypeText("12");
+                browser.Button(Find.ById(GoBtn)).Click();
+                var item = browser.Div(Find.ById(AllNumbersConditionalDiv)).Text;
                 var expectedAllNumbersValue = "1,2,C,4,E,C,7,8,C,E,11,C";
                 Assert.AreEqual(item, expectedAllNumbersValue);
             }
@@ -84,9 +90,9 @@ namespace Numeric_Sequence_Calculator.Tests.Controllers
         {
             using (var browser = new IE(WebsiteURL))
             {
-                browser.TextField(Find.ById("txtMagicNumber")).TypeText("12");
-                browser.Button(Find.ById("calculateSequenceBtn")).Click();
-                var item = browser.Div(Find.ById("fibonnaciDiv")).Text;
+                browser.TextField(Find.ById(TxtBox)).TypeText("12");
+                browser.Button(Find.ById(GoBtn)).Click();
+                var item = browser.Div(Find.ById(FibonnaciDiv)).Text;
                 var expectedAllNumbersValue = "1,1,2,3,5,8";
                 Assert.AreEqual(item, expectedAllNumbersValue);
             }

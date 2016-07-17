@@ -1,4 +1,4 @@
-﻿@model Numeric_Sequence_Calculator.Models.MagicNumber
+﻿@model Numeric_Sequence_Calculator.Models.ChosenNumber
 @{
     ViewBag.Title = "Home Page";
 }
@@ -8,18 +8,14 @@
     <hr />
     <form id="mainform">
         <h3>Enter a number and hit "GO"</h3>
-        @Html.TextBoxFor(x => x.Number, new { id = "txtMagicNumber", @class = "form-control centered" })
+        @Html.TextBoxFor(x => x.Number, new { id = "txtChosenNumber", @class = "form-control centered" })
         @Html.ValidationMessageFor(x => x.Number, "", new { @class = "standardPadding centered" })
         <button id="calculateSequenceBtn" type="submit" class="btn btn-primary centered has-spinner" style="margin-top: 20px;" >
             <span class="spinner">
                 <i class="fa fa-refresh fa-spin"></i>
             </span>GO
         </button>
-        @*<input type="submit" id="calculateSequenceBtn" value="GO" style="margin-top: 20px;" class="btn btn-primary centered" />*@
     </form>
-    <div id="loadingDiv">
-        Loading your data now!!!!
-    </div>
     <div id="results"></div>
 </div>
 
@@ -39,14 +35,14 @@
             $(this).validate();
             $('#mainform').submit(function (event) {
                 if ($("form").valid()) {
-                    if ($('#txtMagicNumber').val() > maxNumber) {
+                    if ($('#txtChosenNumber').val() > maxNumber) {
                         if (!confirm('Your number is larger than ' + maxNumber + ', this may take a little while to calculate, and may cause an error, click Yes to try anyway or No to enter a different number')) {
                             return;
                         }
                     }
                     else {
                         $('#results').html('');
-                        var json = JSON.stringify({ MagicNumber: $('#txtMagicNumber').val() });
+                        var json = JSON.stringify({ MagicNumber: $('#txtChosenNumber').val() });
                         var url = '@Url.Action("CalculateSequence")';
                         $.ajax({
                             type: "POST",

@@ -11,19 +11,19 @@ namespace Numeric_Sequence_Calculator.Controllers
     {
         public ActionResult Index()
         {
-            return View(new MagicNumber());
+            return View(new ChosenNumber());
         }
 
         [HttpPost]
         public ActionResult CalculateSequence(int MagicNumber)
         {
             SequenceResult model = new SequenceResult();
-            model.MagicNumber = MagicNumber;
-            model.AllNumbersUpTo = GetNumbersUpTo(model.MagicNumber);
+            model.ChosenNumber = MagicNumber;
+            model.AllNumbersUpTo = GetNumbersUpTo(model.ChosenNumber);
             model.OddNumbersUpTo = GetOddNumbersFromList(model.AllNumbersUpTo);
             model.EvenNumbersUpTo = GetEvenNumbersFromList(model.AllNumbersUpTo);
             model.AllNumbersConditional = GetConditionalNumbersUpTo(model.AllNumbersUpTo);
-            model.FibonacciNumbersUpTo = GetFibonacciSequenceUpTo(1, model.MagicNumber);
+            model.FibonacciNumbersUpTo = GetFibonacciSequenceUpTo(1, model.ChosenNumber);
             return PartialView("_sequenceResults", model);
         }
 

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace Numeric_Sequence_Calculator.Models
 {
     public class SequenceResult
     {
-        public int MagicNumber { get; set; }
+        public int ChosenNumber { get; set; }
         public List<int> AllNumbersUpTo{ get; set; }
         public List<int> OddNumbersUpTo { get; set; }
         public List<int> EvenNumbersUpTo { get; set; }
