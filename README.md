@@ -4,9 +4,9 @@ Hey there!
 
 Here is my solution to the Numeric Sequence Calculator task.
 
-I have created an MVC web app, that includes unit tests, automated UI tests and this readme file. As you have discovered I have also saved the project to this github repository.
+I have created an MVC web app that includes unit tests, automated UI tests and this readme file. As you have discovered I have also saved the project to this github repository.
 
-This is the first time I have done unit testing or automated UI testing in a long time. I tried Selenium but found it a little frustraiting, so then I tried WatIn and found it really simple and well integrated into the dom. I wasn't sure how to distinguish UI tests against unit tests as far as naming goes, so I put UI infront of the UI tests. 
+This is the first time I have done unit testing or automated UI testing in a long time. I tried Selenium but found it a little frustrating, so then I tried WatIn and found it really simple and well integrated into the dom. I wasn't sure how to distinguish UI tests against unit tests as far as naming goes, so I put UI in front of the UI test names. 
 
 Hopefully the project will be easy enough to run. I used VS 2015 with nuget packages.
 
@@ -30,7 +30,7 @@ Please observe the loading icon on the button, this indicates that we are proces
     If you entered an invalid number, there should be a red warning message below the text box informing what is wrong with your number, please start from the first step again.
   </li>
   <li>
-    If you entered a valid number, your results will be displayed. Each section is broken up by a the title of the calculation made, and the list of calculated results.
+    If you entered a valid number, your results will be displayed. Each section is broken up by the title of the calculation made, and the list of calculated results.
   </li>
 </ul>
 
