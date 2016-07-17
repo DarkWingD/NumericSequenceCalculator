@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numeric Sequence Calculator", "Numeric Sequence Calculator\Numeric Sequence Calculator.csproj", "{95A8A613-0ADC-44EB-BA27-6C1DE1E5ECC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numeric Sequence Calculator.Tests", "Numeric Sequence Calculator.Tests\Numeric Sequence Calculator.Tests.csproj", "{26D3CBCE-A529-4AE4-B7D7-FF7402BE2182}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95A8A613-0ADC-44EB-BA27-6C1DE1E5ECC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95A8A613-0ADC-44EB-BA27-6C1DE1E5ECC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95A8A613-0ADC-44EB-BA27-6C1DE1E5ECC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95A8A613-0ADC-44EB-BA27-6C1DE1E5ECC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26D3CBCE-A529-4AE4-B7D7-FF7402BE2182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D3CBCE-A529-4AE4-B7D7-FF7402BE2182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D3CBCE-A529-4AE4-B7D7-FF7402BE2182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D3CBCE-A529-4AE4-B7D7-FF7402BE2182}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

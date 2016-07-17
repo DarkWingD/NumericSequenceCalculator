@@ -1,0 +1,73 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #6AC0E6;
+    color: white;
+    font-family: sans-serif;
+}
+.body-content {
+    text-align:center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#mainform{
+    background-color: #f5f5f5;
+    color: darkblue;
+    border-radius: 15px;
+    padding: 30px;
+}
+.results {
+    display: block;
+    background-color: #428bca;
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 15px;
+    word-wrap: break-word;
+}
+.results-span{
+    text-align:left;
+}
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+}
+.input-validation-error {
+  border: solid 1px rgba(255, 0, 0, 0.64);
+}
+.field-validation-error{
+    background-color: rgba(255, 0, 0, 0.64);
+    border-radius: 15px;
+    padding: 5px;
+    color: white;
+    margin-top: 10px;
+}
+/*knockout overrides*/
+.form-control{
+    font-size: 30px;
+    height: 48px;
+}
+.btn{
+    font-size: 30px;
+}
+
+/*Spinner http://jsfiddle.net/AndrewDryga/GY6LC/ */
+.spinner {
+  display: inline-block;
+  opacity: 0;
+  width: 0;
+  -webkit-transition: opacity 0.25s, width 0.25s;
+  -moz-transition: opacity 0.25s, width 0.25s;
+  -o-transition: opacity 0.25s, width 0.25s;
+  transition: opacity 0.25s, width 0.25s;
+}
+.has-spinner.active {
+  cursor:progress;
+}
+.has-spinner.active .spinner {
+  opacity: 1;
+  width: auto;
+}
+.has-spinner.btn.active .spinner {
+    width: 41px;
+}
